@@ -19,4 +19,16 @@ public class Operaciones {
     return numeroUno * numeroDos;
   }
 
+  public int division(int numeroUno, int numeroDos) {
+    return numeroUno / numeroDos;
+  }
+
+  public String palabra(String palabraUno) {
+    return palabraUno;
+  }
+
+  public int longitudPalabra(String palabraUno) {
+    return palabraUno.length();
+  }
+
 }
