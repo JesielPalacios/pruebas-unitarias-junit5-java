@@ -18,7 +18,7 @@ public class OperacionesTest {
     // Act
     // A dónde voy a ir?
     int resultado;
-    resultado = operaciones.Suma(numeroUno, numeroDos);
+    resultado = operaciones.suma(numeroUno, numeroDos);
 
     // Assert
     // Validar que está bien o mal.
@@ -37,7 +37,7 @@ public class OperacionesTest {
 
     // Act
     int resultado;
-    resultado = operaciones.Suma(numeroUno, numeroDos);
+    resultado = operaciones.suma(numeroUno, numeroDos);
 
     // Assert
     assertEquals(7, resultado);
