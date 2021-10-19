@@ -1,14 +1,16 @@
 package EjerciciosClase;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 public class OperacionesTest {
   Operaciones operaciones;
 
-  @BeforeEach
+  @Before
   public void setUp() {
     operaciones = new Operaciones();
   }
@@ -179,7 +181,7 @@ public class OperacionesTest {
     assertEquals(1, resultado);
   }
 
-  // Sección: "Teléfono no roto ."
+  // Sección: "Teléfono no roto."
   @Test
   public void reciboholaYObtengohola() {
     // Arrange
@@ -204,7 +206,7 @@ public class OperacionesTest {
     assertEquals("Bancolombia", resultado);
   }
 
-  // Sección: "Teléfono no roto ."
+  // Sección: "Teléfono no roto."
   @Test
   public void reciboholaYObtengoCuatro() {
     // Arrange
@@ -227,6 +229,276 @@ public class OperacionesTest {
 
     // Assert
     assertEquals(11, resultado);
+  }
+
+  // Sección: "Será o no será?"
+  @Test
+  public void ReciboCincoYObtendoTrue() {
+    // Arrange
+    int numeroUno = 5;
+
+    // Act
+    // Boolean resultado = operaciones.parOImpar(numeroUno);
+    boolean resultado = operaciones.parOImpar(numeroUno);
+
+    // Assert
+    // assertEquals(true, resultado);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void ReciboCuatroYObtendoFalse() {
+    // Arrange
+    int numeroUno = 4;
+
+    // Act
+    boolean resultado = operaciones.parOImpar(numeroUno);
+
+    // Assert
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void ReciboTresYObtendoFalse() {
+    // Arrange
+    int numeroUno = 3;
+
+    // Act
+    boolean resultado = operaciones.parOImpar(numeroUno);
+
+    // Assert
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void ReciboDosYObtendoFalse() {
+    // Arrange
+    int numeroUno = 2;
+
+    // Act
+    boolean resultado = operaciones.parOImpar(numeroUno);
+
+    // Assert
+    assertFalse(resultado);
+  }
+
+  // Sección: "Ganando o perdiendo?"
+  @Test
+  public void ReciboCincoYObtendoTrue_Parte2() {
+    int numeroUno = 5;
+    boolean resultado = operaciones.positivoONegativo(numeroUno);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void ReciboTresNegativoYObtendoFalse() {
+    int numeroUno = -3;
+    boolean resultado = operaciones.positivoONegativo(numeroUno);
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void ReciboCeroYObtendoFalse() {
+    int numeroUno = 0;
+    boolean resultado = operaciones.positivoONegativo(numeroUno);
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void ReciboCincoNegativoYObtendoFalse() {
+    int numeroUno = -5;
+    boolean resultado = operaciones.positivoONegativo(numeroUno);
+    assertFalse(resultado);
+  }
+
+  // Sección: "De dos en dos."
+  @Test
+  public void ReciboDosYObtengoTrue_DeDosEnDos() {
+    int numeroUno = 2;
+    boolean resultado = operaciones.esPar(numeroUno);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void ReciboTresYObtengoFalse_DeDosEnDos() {
+    int numeroUno = 3;
+    boolean resultado = operaciones.esPar(numeroUno);
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void ReciboCuatroYObtengoTrue_DeDosEnDos() {
+    int numeroUno = 2;
+    boolean resultado = operaciones.esPar(numeroUno);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void ReciboCincoYObtengoFalse_DeDosEnDos() {
+    int numeroUno = 5;
+    boolean resultado = operaciones.esPar(numeroUno);
+    assertFalse(resultado);
+  }
+
+  // Sección: "Piensa positivo."
+  @Test
+  public void ReciboDosYObtengoDos_PiensaPositivo() {
+    int numeroUno = 2;
+    int resultado = operaciones.convierteEnPositivo(numeroUno);
+    assertEquals(2, resultado);
+  }
+
+  @Test
+  public void ReciboCuatroNegativoYObtengoCuatro_PiensaPositivo() {
+    int numeroUno = -4;
+    int resultado = operaciones.convierteEnPositivo(numeroUno);
+    assertEquals(4, resultado);
+  }
+
+  @Test
+  public void ReciboSeisNegativoYObtengoSeis_PiensaPositivo() {
+    int numeroUno = -6;
+    int resultado = operaciones.convierteEnPositivo(numeroUno);
+    assertEquals(6, resultado);
+  }
+
+  @Test
+  public void ReciboSieteYObtengoSiete_PiensaPositivo() {
+    int numeroUno = 7;
+    int resultado = operaciones.convierteEnPositivo(numeroUno); // trasnformarAPositivo
+    assertEquals(7, resultado);
+  }
+
+  // Sección: "Calculadora lógica P1."
+  @Test
+  public void reciboTrueYTrueYObtengoTrue_CalculadoraLogicaP1() {
+    boolean operadorLogicoUno = true;
+    boolean operadorLogicoDos = true;
+    boolean resultado = operaciones.operacionLogicaAND(operadorLogicoUno, operadorLogicoDos);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void reciboTrueYFalseYObtengoFalse_CalculadoraLogicaP1() {
+    boolean operadorLogicoUno = true;
+    boolean operadorLogicoDos = false;
+    boolean resultado = operaciones.operacionLogicaAND(operadorLogicoUno, operadorLogicoDos);
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void reciboFalseYTrueYObtengoFalse_CalculadoraLogicaP1() {
+    boolean operadorLogicoUno = false;
+    boolean operadorLogicoDos = true;
+    boolean resultado = operaciones.operacionLogicaAND(operadorLogicoUno, operadorLogicoDos);
+    assertFalse(resultado);
+  }
+
+  @Test
+  public void reciboFalseYFalseYObtengoFalse_CalculadoraLogicaP1() {
+    boolean operadorLogicoUno = false;
+    boolean operadorLogicoDos = false;
+    boolean resultado = operaciones.operacionLogicaAND(operadorLogicoUno, operadorLogicoDos);
+    assertFalse(resultado);
+  }
+
+  // Sección: "Calculadora lógica P2."
+  @Test
+  public void reciboTrueYTrueYObtengoTrue_CalculadoraLogicaP2() {
+    boolean operadorLogicoUno = true;
+    boolean operadorLogicoDos = true;
+    boolean resultado = operaciones.operacionLogicaOR(operadorLogicoUno, operadorLogicoDos);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void reciboTrueYFalseYObtengoTrue_CalculadoraLogicaP2() {
+    boolean operadorLogicoUno = true;
+    boolean operadorLogicoDos = false;
+    boolean resultado = operaciones.operacionLogicaOR(operadorLogicoUno, operadorLogicoDos);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void reciboFalseYTrueYObtengoTrue_CalculadoraLogicaP2() {
+    boolean operadorLogicoUno = false;
+    boolean operadorLogicoDos = true;
+    boolean resultado = operaciones.operacionLogicaOR(operadorLogicoUno, operadorLogicoDos);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void reciboFalseYFalseYObtengoFalse_CalculadoraLogicaP2() {
+    boolean operadorLogicoUno = false;
+    boolean operadorLogicoDos = false;
+    boolean resultado = operaciones.operacionLogicaOR(operadorLogicoUno, operadorLogicoDos);
+    assertFalse(resultado);
+  }
+
+  // Sección: "Celebridad por color."
+  @Test
+  public void reciboRojoYVerdeYObtengoNavidad_CelebridadPorColor() {
+    String colorUno = "Rojo";
+    String colorDos = "Verde";
+    String resultado = operaciones.festividades(colorUno, colorDos);
+    assertEquals("navidad", resultado);
+  }
+
+  @Test
+  public void reciboVerdeYNaranjaYObtengoHalloween_CelebridadPorColor() {
+    String colorUno = "Verde";
+    String colorDos = "Naranja";
+    String resultado = operaciones.festividades(colorUno, colorDos);
+    assertEquals("halloween", resultado);
+  }
+
+  @Test
+  public void reciboRojoYNaranjaYObtengoPascua_CelebridadPorColor() {
+    String colorUno = "Rojo";
+    String colorDos = "Naranja";
+    String resultado = operaciones.festividades(colorUno, colorDos);
+    assertEquals("pascua", resultado);
+  }
+
+  // Sección: "El último." - | Tarea
+  // @Test
+  // public void reciboOchoYDiesichoYObtengoCero_ElUltimo() {
+  // int numeroUno = 8;
+  // int numeroDos = 18;
+  // boolean resultado = operaciones.modulo(numeroUno, numeroDos);
+  // assertEquals(true, resultado);
+  // }
+
+  // @Test
+  // public void reciboOchoYDiesichoYObtengoCero_ElUltimo() {
+  // int numeroUno = 8;
+  // int numeroDos = 18;
+  // int resultado = operaciones.modulo(numeroUno, numeroDos);
+  // assertEquals(8, resultado);
+  // }
+
+  @Test
+  public void reciboOchoYDiesichoYObtengoTrue_ElUltimo() {
+    int numeroUno = 8;
+    int numeroDos = 18;
+    boolean resultado = operaciones.contieneNumeroAlFinal(numeroUno, numeroDos);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void reciboTresYCientotreceYObtengoTrue_ElUltimo() {
+    int numeroUno = 3;
+    int numeroDos = 113;
+    boolean resultado = operaciones.contieneNumeroAlFinal(numeroUno, numeroDos);
+    assertTrue(resultado);
+  }
+
+  @Test
+  public void reciboSeisYCientodiesisieteYObtengoFalse_ElUltimo() {
+    int numeroUno = 6;
+    int numeroDos = 117;
+    boolean resultado = operaciones.contieneNumeroAlFinal(numeroUno, numeroDos);
+    assertFalse(resultado);
   }
 
 }
