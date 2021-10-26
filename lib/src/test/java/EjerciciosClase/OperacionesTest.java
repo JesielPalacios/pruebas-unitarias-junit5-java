@@ -532,7 +532,7 @@ public class OperacionesTest {
   public void reciboDosYDosYObtengoCuatro_PotenciaDeDos() {
     int base = 2;
     int exponente = 2;
-    int resultado = operaciones.potenciaDeDos(base, exponente);
+    int resultado = operaciones.potencia(base, exponente);
     assertEquals(4, resultado);
   }
 

@@ -137,13 +137,13 @@ public class Operaciones {
   // }
 
   // public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
-  //   String numCadena1 = String.valueOf(numeroUno);
-  //   String numCadena2 = String.valueOf(numeroDos);
-  //   // if (numCadena2.endsWith(numCadena1))
-  //   //   return true;
-  //   // else
-  //   //   return false;
-  //   return numCadena2.endsWith(numCadena1);
+  // String numCadena1 = String.valueOf(numeroUno);
+  // String numCadena2 = String.valueOf(numeroDos);
+  // // if (numCadena2.endsWith(numCadena1))
+  // // return true;
+  // // else
+  // // return false;
+  // return numCadena2.endsWith(numCadena1);
   // }
 
   public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
@@ -162,7 +162,20 @@ public class Operaciones {
     return resultado;
   }
 
-  public int potenciaDeDos(int base, int exponente) {
-    return multiplicacionConCiclo(base, base);
+  public int potencia(int base, int exponente) {
+    // return multiplicacionConCiclo(base, base);
+
+    // int resultado = 1;
+    // for (int i = 0; i < exponente; i++) {
+    // resultado = resultado * base;
+    // }
+    // return resultado;
+
+    int resultado = 1;
+    for (int i = 0; i < exponente; i++) {
+      resultado = multiplicacionConCiclo(resultado, base);
+    }
+    return resultado;
+
   }
 }
