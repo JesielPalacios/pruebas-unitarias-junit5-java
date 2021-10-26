@@ -161,4 +161,8 @@ public class Operaciones {
     }
     return resultado;
   }
+
+  public int potenciaDeDos(int base, int exponente) {
+    return multiplicacionConCiclo(base, base);
+  }
 }

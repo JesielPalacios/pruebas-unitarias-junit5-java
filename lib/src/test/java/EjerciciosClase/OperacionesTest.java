@@ -512,7 +512,7 @@ public class OperacionesTest {
 
   // Multiplicar sin multiplicar
   @Test
-  public void reciboTresYCuatroYObtengoDosce() {
+  public void reciboTresYCuatroYObtengoDoce() {
     int multiplicandoUno = 3;
     int multiplicandoDos = 4;
     int resultado = operaciones.multiplicacionConCiclo(multiplicandoUno, multiplicandoDos);
@@ -525,6 +525,15 @@ public class OperacionesTest {
     int multiplicandoDos = 5;
     int resultado = operaciones.multiplicacionConCiclo(multiplicandoUno, multiplicandoDos);
     assertEquals(25, resultado);
+  }
+
+  // Potencia de dos
+  @Test
+  public void reciboDosYDosYObtengoCuatro_PotenciaDeDos() {
+    int base = 2;
+    int exponente = 2;
+    int resultado = operaciones.potenciaDeDos(base, exponente);
+    assertEquals(4, resultado);
   }
 
 }
