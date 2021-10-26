@@ -146,11 +146,19 @@ public class Operaciones {
   //   return numCadena2.endsWith(numCadena1);
   // }
 
-    public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
-    if (numeroUno == numeroDos%10) {
+  public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
+    if (numeroUno == numeroDos % 10) {
       return true;
     } else {
       return false;
     }
+  }
+
+  public int multiplicacionConCiclo(int multiplicandoUno, int multiplicandoDos) {
+    int resultado = 0;
+    for (int i = 0; i < multiplicandoDos; i++) {
+      resultado = resultado + multiplicandoUno;
+    }
+    return resultado;
   }
 }

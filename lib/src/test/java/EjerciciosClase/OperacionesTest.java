@@ -501,4 +501,30 @@ public class OperacionesTest {
     assertFalse(resultado);
   }
 
+  // Multiplicar sin multiplicar
+  @Test
+  public void reciboDosYDosYObtengoCuatro() {
+    int multiplicandoUno = 2;
+    int multiplicandoDos = 2;
+    int resultado = operaciones.multiplicacionConCiclo(multiplicandoUno, multiplicandoDos);
+    assertEquals(4, resultado);
+  }
+
+  // Multiplicar sin multiplicar
+  @Test
+  public void reciboTresYCuatroYObtengoDosce() {
+    int multiplicandoUno = 3;
+    int multiplicandoDos = 4;
+    int resultado = operaciones.multiplicacionConCiclo(multiplicandoUno, multiplicandoDos);
+    assertEquals(12, resultado);
+  }
+
+  @Test
+  public void reciboCincoYCincoYCincoYObtengoVeintiCinco() {
+    int multiplicandoUno = 5;
+    int multiplicandoDos = 5;
+    int resultado = operaciones.multiplicacionConCiclo(multiplicandoUno, multiplicandoDos);
+    assertEquals(25, resultado);
+  }
+
 }
