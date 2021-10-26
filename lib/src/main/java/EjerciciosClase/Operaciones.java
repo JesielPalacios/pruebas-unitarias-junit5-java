@@ -136,13 +136,21 @@ public class Operaciones {
   // return lastElement;
   // }
 
-  public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
-    String numCadena1 = String.valueOf(numeroUno);
-    String numCadena2 = String.valueOf(numeroDos);
-    // if (numCadena2.endsWith(numCadena1))
-    //   return true;
-    // else
-    //   return false;
-    return numCadena2.endsWith(numCadena1);
+  // public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
+  //   String numCadena1 = String.valueOf(numeroUno);
+  //   String numCadena2 = String.valueOf(numeroDos);
+  //   // if (numCadena2.endsWith(numCadena1))
+  //   //   return true;
+  //   // else
+  //   //   return false;
+  //   return numCadena2.endsWith(numCadena1);
+  // }
+
+    public boolean contieneNumeroAlFinal(int numeroUno, int numeroDos) {
+    if (numeroUno == numeroDos%10) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
