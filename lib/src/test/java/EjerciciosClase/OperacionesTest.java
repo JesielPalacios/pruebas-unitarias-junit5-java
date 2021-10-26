@@ -536,4 +536,12 @@ public class OperacionesTest {
     assertEquals(4, resultado);
   }
 
+  // Encontrar el mayor.
+  @Test
+  public void reciboArregloYObtengoTres() {
+    int[] arregloUno = { 1, 2, 3 };
+    int resultado = operaciones.encontrarElMayor(arregloUno);
+    assertEquals(3, resultado);
+  }
+
 }

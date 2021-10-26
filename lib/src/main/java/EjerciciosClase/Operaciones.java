@@ -178,4 +178,11 @@ public class Operaciones {
     return resultado;
 
   }
+
+  // public int encontrarElMayor(int[] arregloUno) {
+  //   int numeroMayor = 0;
+  //   for (int i = 0; i < arregloUno.length; i++) {
+
+  //   }
+  // }
 }
